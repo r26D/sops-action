@@ -18,7 +18,7 @@ This action decrypts a SOPS-encrypted file using an AGE private key provided via
 
 ```yaml
   - name: Decrypt secrets
-    uses: r26d/sops-action@vX
+    uses: r26d/sops-action@v0.0.2"
     env:
       AGE_PRIVATE_KEY: ${{ secrets.AGE_PRIVATE_KEY }}
     with:

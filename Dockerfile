@@ -1,5 +1,6 @@
 #This docker file was based on one from LICENSE.DavidTesar
 FROM debian:trixie-slim
+LABEL org.opencontainers.image.source=https://github.com/r26D/sops-action
 
 # Sops is used to handle the decryption of secrets by helm secerts
 #Version can be found at
