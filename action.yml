@@ -1,0 +1,21 @@
+name: 'SOPS AGE Decrypt Action'
+description: 'Decrypt a SOPS-encrypted file using an AGE private key passed via env.'
+inputs:
+  encrypted_path:
+    description: 'Path to the SOPS-encrypted file (relative to workspace or absolute)'
+    required: true
+  decrypted_path:
+    description: 'Path to write the decrypted file (will be created/overwritten)'
+    required: true
+  working_directory:
+    description: 'Optional directory to run from before decrypting'
+    required: false
+
+runs:
+  using: 'docker'
+  #image: 'Dockerfile'
+  image: "docker://ghcr.io/r26d/sops-action/sops-action:v0.0.1"
+  args:
+    - ${{ inputs.encrypted_path }}
+    - ${{ inputs.decrypted_path }}
+    - ${{ inputs.working_directory }}
